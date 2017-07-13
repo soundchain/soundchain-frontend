@@ -1,0 +1,41 @@
+{
+  "presets": [
+    "react",
+    ["env", {
+      "targets": {
+        "uglify": false,
+        "browsers": [
+          "last 2 versions",
+          "safari >= 8",
+          "ie >= 10",
+          "ios >= 8"
+        ]
+      },
+      "modules": false,
+      "loose": true,
+      "useBuiltIns": true
+    }],
+    "es2015"
+  ],
+  "compact" : false,
+  "plugins": [
+    ["babel-root-import", { "rootPathSuffix": "src/js" }],
+    "react-hot-loader/babel",
+    "transform-object-rest-spread",
+    "transform-decorators-legacy",
+    "transform-class-properties"
+  ],
+  "env": {
+    "production": {
+      "presets": ["react-optimize"]
+    },
+    "test": {
+      "presets": ["env"],
+      "plugins": [
+        ["babel-root-import", { "rootPathSuffix": "src/js" }],
+        "transform-object-rest-spread",
+        "transform-class-properties"
+      ]
+    }
+  }
+}

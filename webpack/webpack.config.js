@@ -81,6 +81,25 @@ const baseConfig = {
       join(__dirname, '../node_modules'),
     ],
     alias: {
+      'src': resolve(__dirname, '../src'),
+
+      'css': resolve(__dirname, '../src/css'),
+      'img': resolve(__dirname, '../src/img'),
+      'store': resolve(__dirname, '../src/js/store'),
+      'utils': resolve(__dirname, '../src/js/utils'),
+      'models': resolve(__dirname, '../src/js/models'),
+      'helpers': resolve(__dirname, '../src/js/helpers'),
+
+      'actions': resolve(__dirname, '../src/js/actions'),
+      'reducers': resolve(__dirname, '../src/js/reducers'),
+      'selectors': resolve(__dirname, '../src/js/selectors'),
+      'constants': resolve(__dirname, '../src/js/constants'),
+
+      'containers': resolve(__dirname, '../src/js/containers'),
+      'components': resolve(__dirname, '../src/js/components'),
+
+      'middlewares': resolve(__dirname, '../src/js/middlewares')
+
       //'@digix/spectrum': path.resolve(__dirname),
     },
   },

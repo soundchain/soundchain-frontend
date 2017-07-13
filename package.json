@@ -97,6 +97,7 @@
     "babel-preset-stage-0": "^6.24.1",
     "babel-root-import": "^4.1.8",
     "chai": "^4.0.2",
+    "classnames-loader": "^2.0.0",
     "copy-webpack-plugin": "^4.0.1",
     "coveralls": "^2.13.1",
     "css-loader": "^0.28.4",

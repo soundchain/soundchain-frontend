@@ -21,7 +21,7 @@ module.exports = config => ({
     filename: '[name].[chunkhash].js',
   },
 
-  plugins: config.plugins.concat([
+  plugins: [
     new webpack.NamedModulesPlugin(),
     new webpack.NamedChunksPlugin((chunk) => {
       if (chunk.name) {
@@ -65,7 +65,24 @@ module.exports = config => ({
       autoUpdate: 1000 * 60 * 2,
     }),
     new webpack.optimize.ModuleConcatenationPlugin(),
-  ]).concat(process.env.STATS ? (
+  ].concat(process.env.STATS ? (
     new StatsPlugin('../stats.json', { chunkModules: true })
   ) : []),
+
+  module: {
+    loaders: [{
+      test: /\.(css|scss)$/,
+      use: ['classnames-loader'].concat(
+        ExtractTextPlugin.extract({
+          fallback: [
+            'style-loader'
+          ],
+          use: [
+            'css-loader',
+            'sass-loader'
+          ]
+        })
+      )
+    }]
+  },
 });

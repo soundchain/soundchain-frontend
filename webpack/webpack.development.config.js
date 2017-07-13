@@ -2,13 +2,14 @@
 
 const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const { resolve } = require('path');
 
 module.exports = config => ({
   devtool: '#module-inline-source-map',
 
   entry: [
     `webpack-dev-server/client?http://localhost:8080`,
-  ].concat(config.entry),
+  ],
 
   output: {
     filename: 'bundle.js',
@@ -30,5 +31,23 @@ module.exports = config => ({
       aggregateTimeout: 300,
       ignored: /node_modules/,
     },
+  },
+
+  module: {
+    loaders: [{
+      test: /\.(css|scss)$/,
+      use: [
+        'classnames-loader',
+        'style-loader',
+        {
+          loader: 'css-loader',
+          options: {
+            importLoaders: 2,
+            localIdentName: '[local]---[name]---[hash:base64:5]'
+          }
+        },
+        'sass-loader'
+      ]
+    }]
   },
 });

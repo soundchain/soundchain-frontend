@@ -16,11 +16,13 @@ const date = new Date();
 const ymd = [date.getUTCFullYear(), date.getUTCMonth() + 1, date.getUTCDate()].join('-');
 const hms = [date.getUTCHours(), date.getUTCMinutes(), date.getUTCSeconds()].join(':');
 
+const Config = require('webpack-config').default;
+
 const buildName = `v${version} ${ymd} ${hms}`;
 
 console.log('Building SoundChain Frontend', buildName);
 
-const baseConfig = {
+const config = new Config().merge({
   context: resolve(__dirname, '../src'),
 
   entry: [
@@ -45,9 +47,6 @@ const baseConfig = {
     }, {
       test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
       loader: 'url-loader?limit=10000&mimetype=application/fontwoff',
-    }, {
-      test: /\.(css|scss)$/,
-      loader: ExtractTextPlugin.extract({ fallback: 'style-loader', use: ['css-loader', 'sass-loader'] }),
     }, {
       test: /\.(js|jsx)$/,
       include: [
@@ -109,8 +108,6 @@ const baseConfig = {
       'node_modules', fs.realpathSync(`${__dirname}/../node_modules/`),
     ],
   },
-};
+});
 
-const config = Object.assign(baseConfig, envConfig(baseConfig));
-
-module.exports = config;
+module.exports = config.merge(envConfig(config));

@@ -1,0 +1,55 @@
+:local .app {
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  
+  > * {
+    flex: 0 0 auto;
+  }
+}
+
+:local .main {
+  flex: 1 1 auto;
+
+  display: flex;
+  overflow: hidden;
+
+  > * {
+    flex: 0 0 auto;
+    //overflow-y: scroll;
+  }  
+
+  /*
+  > .left {
+    width: 200px;
+    background: #eee;
+  }
+  */
+
+  /*
+  > .middle {
+    flex: 1 1 auto;
+  }
+  */
+
+  /*
+  > .right {
+    width: 200px;
+    background: #eee;
+  }
+  */
+}
+
+:local .content {
+  flex: 1 1 auto;
+
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  
+  > * {
+    flex: 0 0 auto;
+  }
+}

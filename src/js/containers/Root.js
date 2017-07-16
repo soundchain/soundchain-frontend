@@ -9,7 +9,7 @@ export default class Root extends Component {
   render() {
     return (
       <Provider store={store}>
-        <ConnectedRouter history={history}>
+        <ConnectedRouter history={history} basename='/'>
           <Main/>
         </ConnectedRouter>
       </Provider>

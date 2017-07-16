@@ -12,6 +12,7 @@ module.exports = config => ({
   ],
 
   output: {
+    publicPath: '/',
     filename: 'bundle.js',
   },
 

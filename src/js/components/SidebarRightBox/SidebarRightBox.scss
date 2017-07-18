@@ -1,0 +1,8 @@
+@import "~css/constants.scss";
+
+:local {
+  .sidebar-right-box {
+    display: flex;
+    background-color: $color-bg-rightbox;
+  }
+}

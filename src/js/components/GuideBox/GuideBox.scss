@@ -1,0 +1,73 @@
+@import "~css/constants.scss";
+
+:local {
+  .guide-box {
+    display: flex;
+    flex-direction: column;
+    background-color: $color-bg-rightbox;
+    width: 350px;
+    border-right: 1px solid $color-border-delim-rightbox;
+    color: $color-text-secondary;
+    &__header {
+      padding: 20px;
+      padding-left: 58px;
+      color: white;
+    }
+    &__section {
+      display: flex;
+      flex-direction: column;
+      border-top: 1px solid $color-border-delim-rightbox;
+    }
+  }
+  .section {
+    &__header {
+      display: flex;
+      align-items: center;
+      height: 42px;
+      padding: 0 16px;
+      background-color: $color-bg-guide-header;
+      font-size: 18px;
+    }
+    &__content {
+      margin-left: 20px;
+    }
+  }
+
+  .tabs {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    .tab {
+      color: white;
+      padding: 15px;
+      color: #D0D7DD;
+      border-bottom: 1px solid #D0D7DD;
+      &--active {
+        color: #4DA1FF;
+        border-bottom: 2px solid #4DA1FF;
+      }
+    }
+  }
+
+  .step {
+    display: flex;
+    align-items: flex-start;
+    margin-top: 20px;
+    margin-bottom: 28px;
+    &__checkbox {
+      margin-right: 20px;
+      min-width: 18px;
+      height: 18px;
+      border-radius: 2px;
+      background-color: $color-bg-button;
+    }
+    &__text {
+      display: flex;
+      flex-direction: column;
+      &--header {
+        margin-bottom: 12px;
+        font-weight: bold;
+      }
+    }
+  }
+}

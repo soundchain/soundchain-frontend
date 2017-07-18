@@ -1,11 +1,28 @@
 $color-bg-main: #FFF;
 $color-bg-secondary: #F2F2F2;
 $color-bg-nav: #2F4050;
-$color-text-nav: #D9D9D9;
-$color-text-nav-active: #0F0;
-$color-text-nav-selected: #FFF;
+
+$color-bg-rightbox: #2C405A;
+$color-bg-guide-header: #25374F;
 
 $color-bg-button: #A6E50F;
 
+$color-border-delim: #C5D9E8;
+$color-border-delim-rightbox: #42536B;
+
+$color-text-nav: #D9D9D9;
+$color-text-nav-active: $color-bg-button;
+$color-text-nav-selected: #FFF;
+
+$color-text-secondary: #8DABC4;
+
+
+
 $color-bg-active: $color-bg-button;
-$color-text-link: #4DA1FF;
+$color-text-link: #3F536E;
+$color-text-link-secondary: $color-text-secondary;
+$color-text-link-active: $color-bg-button;
+$color-text-link-hover: $color-text-link + (#FFF * 0.2);
+
+$nav-top-height: 58px;
+$nav-left-width: 100px;

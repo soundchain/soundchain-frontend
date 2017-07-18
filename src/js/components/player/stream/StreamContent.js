@@ -1,16 +1,16 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-import { 
+import {
   WidgetStreamTrack,
   WidgetStreamPlaylist,
   WidgetStreamAlbum,
-} from '~/components/ui-toolkit';
+} from 'soundchain-ui-toolkit';
 
 import cx from './StreamContent.scss';
 
 const EXAMPLE_STREAM = [
-  { type: 'track' }, 
+  { type: 'track' },
   { type: 'playlist' },
   { type: 'track' },
   { type: 'album' },
@@ -32,9 +32,9 @@ export default class StreamContent extends Component {
           if (item.type === 'track') {
             return <WidgetStreamTrack key={key}/>;
           } else if (item.type === 'playlist') {
-            return <WidgetStreamPlaylist key={key}/>;  
+            return <WidgetStreamPlaylist key={key}/>;
           } else if (item.type === 'album') {
-            return <WidgetStreamAlbum key={key}/>;  
+            return <WidgetStreamAlbum key={key}/>;
           }
 
           console.error('Stream item has unavailable type: ', item);

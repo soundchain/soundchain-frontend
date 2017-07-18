@@ -1,8 +1,37 @@
 @import "~css/constants.scss";
 
-:local .navigation-left {
-  flex: 1;
-  background-color: $color-bg-nav;
-  box-shadow: 0px 2px 10px 0px rgba(101, 111, 119, 0.25);
-}
+:local {
+  .navigation-left {
+    flex: 1;
+    width: $nav-left-width;
+    background-color: $color-bg-nav;
+    color: $color-text-nav;
 
+    &__link {
+      display: flex;
+      flex-direction: column;
+      height: 72px;
+      align-items: center;
+      text-decoration: none;
+
+      &:visited {
+        color: inherit;
+      }
+      &:hover {
+        color: $color-text-nav-selected;
+      }
+      &--active, &--active:visited {
+        color: $color-text-nav-active;
+        border-left: 1px solid $color-text-nav-active;
+      }
+    }
+  }
+  .link {
+    &__image {
+
+    }
+    &__name {
+
+    }
+  }
+}

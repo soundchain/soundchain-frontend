@@ -1,0 +1,25 @@
+@import "~css/constants.scss";
+
+:local {
+  .box {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid $color-border-delim;
+    height: 60px;
+    padding: 0 30px;
+  }
+
+  .breadcrumbs {
+    display: flex;
+    &__item {
+      font-size: 17px;
+      padding-right: 15px;
+      
+      &:before {
+        color: #B4BFC8;
+        content: '<';
+        margin-right: 15px;
+      }
+    }
+  }
+}

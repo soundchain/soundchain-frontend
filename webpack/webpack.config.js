@@ -97,7 +97,10 @@ const config = new Config().merge({
       'containers': resolve(__dirname, '../src/js/containers'),
       'components': resolve(__dirname, '../src/js/components'),
 
-      'middlewares': resolve(__dirname, '../src/js/middlewares')
+      'middlewares': resolve(__dirname, '../src/js/middlewares'),
+
+      //TODO Remove this. This is temporary until soundchain-ui-toolkit isn't its own module
+      'soundchain-ui-toolkit': resolve(__dirname, '../src/js/components/ui-toolkit'),
 
       //'@digix/spectrum': path.resolve(__dirname),
     },

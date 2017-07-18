@@ -1,0 +1,21 @@
+@import "./constants.scss";
+
+@mixin link-color(
+  $color,
+  $visited-color: $color,
+  $hover-color: $color + (#FFF * 0.2),
+  $active-color: $color-text-link-active
+) {
+  & {
+    color: $color;
+  }
+  &:visited {
+    color: $color;
+  }
+  &:hover {
+    color: $hover-color;
+  }
+  &--active {
+    color: $active-color;
+  }
+}

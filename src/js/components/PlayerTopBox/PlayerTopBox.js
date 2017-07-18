@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-import { 
+import {
   WidgetPlayerTags,
   WidgetPlayerTop,
-} from '~/components/ui-toolkit';
+} from 'soundchain-ui-toolkit';
 
 import cx from './PlayerTopBox.scss';
 
@@ -18,8 +18,17 @@ export default class PlayerTopBox extends Component {
   }
 
   render() {
+    const breadcrumbs = [
+      "Explore", "Rock", "Radiohead - Spectre"
+    ];
+
     return (
-      <div>
+      <div className={cx('box')}>
+        <div className={cx('breadcrumbs')}>
+          {breadcrumbs.map(it =>
+            <div key={it} className={cx('breadcrumbs__item')}>{it}</div>
+          )}
+        </div>
       	<WidgetPlayerTags className={cx('align-left')}/>
       	<WidgetPlayerTop className={cx('align-right')}/>
       </div>

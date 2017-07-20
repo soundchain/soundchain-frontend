@@ -1,0 +1,42 @@
+@import '~css/constants.scss';
+
+:local {
+  .stream-item {
+    padding: 25px;
+    font-family: 'Roboto', sans-serif;
+
+    &__header {
+      display: flex;
+      align-items: center;
+    }
+    &__footer {
+      color: #86939e;
+    }
+    &__content {
+      display: flex;
+      background-color: #fff;
+      border-radius: 5px;
+      box-shadow: 0px 3px 3px 0px rgba(0, 0, 0, 0.1);
+    }
+  }
+
+  .content {
+    position: relative;
+    flex: 1;
+    &__cover {
+      position: relative;
+    }
+  }
+  .cover {
+    &__overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+    &__image {
+      border-radius: 5px 0 0 5px;
+    }
+  }
+}

@@ -27,7 +27,7 @@ export default class StreamContent extends Component {
 
   render() {
     return (
-      <div>
+      <div className={cx('stream-content')}>
         {EXAMPLE_STREAM.map((item, key) => {
           if (item.type === 'track') {
             return <WidgetStreamTrack key={key}/>;

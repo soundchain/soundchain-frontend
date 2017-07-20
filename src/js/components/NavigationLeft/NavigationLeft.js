@@ -32,7 +32,7 @@ export default class NavigationLeft extends Component {
             to={url}
           >
             <div className={cx('link__image')}>
-              <img src={img}/>
+              <object data={img} type="image/svg+xml"/>
             </div>
             <div className={cx('link__name')}>
               {name}

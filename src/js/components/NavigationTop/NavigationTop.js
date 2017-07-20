@@ -8,7 +8,7 @@ export default class NavigationTop extends Component {
     return (
       <div className={cx('navigation-top')}>
         <span className={cx('navigation-top__logo__container')}>
-          <img src={logo}/>
+          <object data={logo} type="image/svg+xml"/>
         </span>
       </div>
     );

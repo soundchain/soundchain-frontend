@@ -1,10 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-import {
-  WidgetPlayerTags,
-  WidgetPlayerTop,
-} from 'soundchain-ui-toolkit';
+import { WidgetPlayerTop } from 'soundchain-ui-toolkit';
 
 import cx from './PlayerTopBox.scss';
 
@@ -29,7 +26,6 @@ export default class PlayerTopBox extends Component {
             <div key={it} className={cx('breadcrumbs__item')}>{it}</div>
           )}
         </div>
-      	<WidgetPlayerTags className={cx('align-left')}/>
       	<WidgetPlayerTop className={cx('align-right')}/>
       </div>
     );

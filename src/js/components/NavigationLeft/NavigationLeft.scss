@@ -4,8 +4,10 @@
   .navigation-left {
     flex: 1;
     width: $nav-left-width;
+    min-width: $nav-left-min-width;
     background-color: $color-bg-nav;
     color: $color-text-nav;
+    font-size: 1.3rem;
 
     &__link {
       display: flex;

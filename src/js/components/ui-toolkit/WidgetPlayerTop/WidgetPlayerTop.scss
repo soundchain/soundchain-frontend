@@ -13,6 +13,7 @@
 
     &__timeline {
       width: 20vw;
+      min-width: 300px;
       display: flex;
       align-items: center;
     }
@@ -59,7 +60,7 @@
       display: flex;
       flex-direction: column;
       color: #86939e;
-      font-size: 14px;
+      font-size: 1rem;
 
       &__album {
         color: #5e6977;

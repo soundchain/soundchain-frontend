@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-import { WidgetStreamItem, WidgetStreamItemInfo } from 'soundchain-ui-toolkit';
+import { WidgetStreamItem, Timeline } from 'soundchain-ui-toolkit';
 
 import BuyLicenses from './BuyLicenses.png';
 import ICOStarted from './ICOStarted.png';
@@ -109,7 +109,11 @@ export default class WidgetStreamTrack extends Component {
           </div>
         </div>
         <div className={cx('item-content__overlay')}>
-          Overlay
+          <Timeline
+            trackAudioInfo={[...new Array(600)].map(Math.random.bind(Math))}
+            played={83}
+            totalTime={4 * 60 + 12}
+          />
         </div>
       </WidgetStreamItem>
     );

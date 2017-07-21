@@ -8,6 +8,8 @@
     width: 350px;
     border-right: 1px solid $color-border-delim-rightbox;
     color: $color-text-secondary;
+    font-size: 1.3rem;
+
     &__header {
       padding: 20px;
       padding-left: 58px;
@@ -26,7 +28,7 @@
       height: 42px;
       padding: 0 16px;
       background-color: $color-bg-guide-header;
-      font-size: 18px;
+      font-size: 1.8rem;
     }
     &__content {
       margin-left: 20px;
@@ -42,6 +44,7 @@
       padding: 15px;
       color: #D0D7DD;
       border-bottom: 1px solid #D0D7DD;
+      font-size: 1.2em;
       &--active {
         color: #4DA1FF;
         border-bottom: 2px solid #4DA1FF;

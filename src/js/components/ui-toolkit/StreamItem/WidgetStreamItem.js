@@ -25,6 +25,7 @@ export default class WidgetStreamItem extends Component {
               className={cx('cover__image')}
               src={this.props.coverImage}
               height="100%"
+              width="220px"
             />
             <div className={cx('cover__overlay')}>
               {this.props.coverOverlay}

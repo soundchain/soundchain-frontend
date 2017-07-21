@@ -9,6 +9,7 @@
     background-color: $color-bg-main;
     border-right: 1px solid $color-border-delim;
     width: 190px;
+    font-size: 1.3rem;
 
     &__link {
       display: flex;
@@ -16,7 +17,7 @@
       margin-top: 31px;
 
       @include link-color($color-text-link)
-      font-size: 15px;
+      font-size: 1.2em;
       text-transform: uppercase;
       text-decoration: none;
     }

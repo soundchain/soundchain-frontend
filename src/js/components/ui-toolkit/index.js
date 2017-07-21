@@ -9,3 +9,5 @@ export WidgetStreamItemInfo from './WidgetStreamItemInfo';
 export WidgetStreamTrack from './WidgetStreamTrack';
 export WidgetStreamPlaylist from './WidgetStreamPlaylist';
 export WidgetStreamAlbum from './WidgetStreamAlbum';
+
+export Timeline from './Timeline';

@@ -4,7 +4,6 @@ const fs = require('fs');
 const webpack = require('webpack');
 const { version } = require('../package.json');
 // plugins
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
@@ -15,52 +14,17 @@ const envConfig = production ? require('./webpack.production.config.js') : requi
 const date = new Date();
 const ymd = [date.getUTCFullYear(), date.getUTCMonth() + 1, date.getUTCDate()].join('-');
 const hms = [date.getUTCHours(), date.getUTCMinutes(), date.getUTCSeconds()].join(':');
+const buildName = `v${version} ${ymd} ${hms}`;
 
 const Config = require('webpack-config').default;
-
-const buildName = `v${version} ${ymd} ${hms}`;
 
 console.log('Building SoundChain Frontend', buildName);
 
 const config = new Config().merge({
   context: resolve(__dirname, '../src'),
-
-  entry: [
-    'babel-polyfill',
-    './../src/js/index',
-  ],
-
-  module: {
-    loaders: [{
-      test: /\.html$/,
-      loader: 'html-loader',
-    }, {
-      test: /manifest.json$/,
-      loader: 'file-loader?name=manifest.json!web-app-manifest-loader',
-    }, {
-      test: /\.json$/,
-      exclude: /manifest.json$/,
-      loader: 'json-loader',
-    }, {
-      test: /\.jpe?g$|\.gif$|\.png$|\.ttf$|\.eot$|\.svg$/,
-      use: 'file-loader?name=[name].[ext]?[hash]',
-    }, {
-      test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-      loader: 'url-loader?limit=10000&mimetype=application/fontwoff',
-    }, {
-      test: /\.(js|jsx)$/,
-      include: [
-        // TODO auto detect es6 modules?
-        resolve(__dirname, '../src'),
-        fs.realpathSync(`${__dirname}/../node_modules/web3-redux`),
-        //fs.realpathSync(`${__dirname}/node_modules/@digix/etc-redemption`),
-        //fs.realpathSync(`${__dirname}/node_modules/@digix/redux-crypto-prices`),
-        //fs.realpathSync(`${__dirname}/node_modules/@digix/truffle-gnosis-multisig`),
-        fs.realpathSync(`${__dirname}/../node_modules/ethereumjs-tx`),
-        fs.realpathSync(`${__dirname}/../node_modules/web3-provider-engine`),
-      ],
-      loader: 'babel-loader',
-    }],
+  output: {
+    path: resolve(__dirname, '../dist/'),
+    publicPath: '/'
   },
 
   plugins: [
@@ -109,6 +73,44 @@ const config = new Config().merge({
   resolveLoader: {
     modules: [
       'node_modules', fs.realpathSync(`${__dirname}/../node_modules/`),
+    ],
+  },
+
+  module: {
+    rules: [
+      {
+        test: /\.html$/,
+        loader: 'html-loader',
+      }, {
+        test: /manifest.json$/,
+        loader: 'file-loader?name=manifest.json!web-app-manifest-loader',
+      }, {
+        test: /\.json$/,
+        exclude: /manifest.json$/,
+        loader: 'json-loader',
+      }, {
+        test: /\.jpe?g$|\.gif$|\.png$|\.ttf$|\.eot$|\.svg$/,
+        loader: 'file-loader?name=[name].[ext]?[hash]',
+      }, {
+        test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+        loader: 'url-loader?limit=10000&mimetype=application/fontwoff',
+      }, {
+        test: /\.(js|jsx)$/,
+        include: [
+          // TODO auto detect es6 modules?
+          resolve(__dirname, '../src'),
+          fs.realpathSync(`${__dirname}/../node_modules/web3-redux`),
+          //fs.realpathSync(`${__dirname}/node_modules/@digix/etc-redemption`),
+          //fs.realpathSync(`${__dirname}/node_modules/@digix/redux-crypto-prices`),
+          //fs.realpathSync(`${__dirname}/node_modules/@digix/truffle-gnosis-multisig`),
+          fs.realpathSync(`${__dirname}/../node_modules/ethereumjs-tx`),
+          fs.realpathSync(`${__dirname}/../node_modules/web3-provider-engine`),
+        ],
+        use: [
+          'cache-loader',
+          'babel-loader'
+        ]
+      }
     ],
   },
 });

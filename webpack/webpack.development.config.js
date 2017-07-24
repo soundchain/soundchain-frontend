@@ -1,25 +1,23 @@
 /* eslint-disable import/no-extraneous-dependencies */
 
 const webpack = require('webpack');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const { resolve } = require('path');
 
 module.exports = config => ({
-  devtool: '#module-inline-source-map',
+  devtool: 'eval',
 
   entry: [
-    `webpack-dev-server/client?http://localhost:8080`,
+    'react-hot-loader/patch',
+    './../src/js/index',
   ],
 
   output: {
-    publicPath: '/',
-    filename: 'bundle.js',
+    filename: '[name].js',
   },
 
   plugins: config.plugins.concat([
-    new ExtractTextPlugin('style.css'),
-    new webpack.HotModuleReplacementPlugin(),
     new webpack.NamedModulesPlugin(), // for HMR
+    new webpack.HotModuleReplacementPlugin(),
   ]),
 
   devServer: {
@@ -35,11 +33,12 @@ module.exports = config => ({
   },
 
   module: {
-    loaders: [{
+    rules: [{
       test: /\.(css|scss)$/,
       use: [
         'classnames-loader',
         'style-loader',
+        'cache-loader',
         {
           loader: 'css-loader',
           options: {

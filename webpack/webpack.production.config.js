@@ -14,14 +14,18 @@ const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const StatsPlugin = require('stats-webpack-plugin');
 
 module.exports = config => ({
-  devtool: false,
+
+  entry: [
+    'babel-polyfill',
+    './../src/js/index',
+  ],
 
   output: {
-    path: path.join(__dirname, '../docs'),
     filename: '[name].[chunkhash].js',
   },
 
   plugins: [
+    new NameAllModulesPlugin(),
     new webpack.NamedModulesPlugin(),
     new webpack.NamedChunksPlugin((chunk) => {
       if (chunk.name) {
@@ -38,7 +42,6 @@ module.exports = config => ({
     new webpack.optimize.CommonsChunkPlugin({
       name: 'runtime',
     }),
-    new NameAllModulesPlugin(),
     new ExtractTextPlugin('style.[contenthash].css'),
     new UglifyJsPlugin({ mangle: true, sourceMap: false, comments: false }),
     new OptimizeCssAssetsPlugin(),
@@ -70,7 +73,7 @@ module.exports = config => ({
   ) : []),
 
   module: {
-    loaders: [{
+    rules: [{
       test: /\.(css|scss)$/,
       use: ['classnames-loader'].concat(
         ExtractTextPlugin.extract({
@@ -78,6 +81,7 @@ module.exports = config => ({
             'style-loader'
           ],
           use: [
+            'cache-loader',
             'css-loader',
             'sass-loader'
           ]

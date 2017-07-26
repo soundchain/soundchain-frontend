@@ -1,0 +1,48 @@
+@import "~css/constants.scss";
+@import "~css/mixins.scss";
+
+:local {
+  .sidebar-left {
+    display: flex;
+    flex-direction: column;
+
+    background-color: $color-bg-main;
+    border-right: 1px solid $color-border-delim;
+    width: 190px;
+    font-size: 1.3rem;
+
+    &__link {
+      display: flex;
+      align-items: center;
+      margin-top: 31px;
+
+      @include link-color($color-text-link)
+      font-size: 1.2em;
+      text-transform: uppercase;
+      text-decoration: none;
+    }
+  }
+
+  .link {
+    &__image {
+      display: flex;
+      justify-content: center;
+      width: 60px;
+    }
+    &__sublinks {
+      padding-left: 60px;
+      margin-top: 20px;
+      display: flex;
+      flex-direction: column;
+    }
+  }
+  .sublink {
+    @include link-color($color-text-link-secondary)
+
+    margin-bottom: 15px;
+    text-decoration: none;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}

@@ -2,12 +2,12 @@ import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
 import cx from './NavigationTop.scss';
 
-import logo from 'img/logo.svg';
-import DAL from './DAL.png';
-import Notification from './Notification.png';
-import Userpic from './Userpic.png';
-import Search from './Search.png';
-import Arrow from './Arrow.png';
+import logoImg from 'img/logo.svg';
+import dalImg from './dal.png';
+import notificationImg from './notification.png';
+import userpicImg from './userpic.png';
+import searchImg from './search.png';
+import arrowImg from './arrow.png';
 
 export default class NavigationTop extends Component {
   state = {
@@ -31,35 +31,37 @@ export default class NavigationTop extends Component {
     ];
     return (
       <div className={cx('navigation-top')}>
+
         <span className={cx('navigation-top__logo__container')}>
-          <object data={logo} type="image/svg+xml"/>
+          <object data={logoImg} type="image/svg+xml"/>
         </span>
+
         <span className={cx('navigation-top__search')}>
-          <img src={Search}/>
+          <img src={searchImg}/>
           <input placeholder="Type to search..."/>
         </span>
-        {menu.map(({url, name, sub}, ind) =>
+
+        {menu.map(({url, name, sub}, key) =>
           <NavLink
             className={cx('navigation-top__item')}
             activeClassName={cx('navigation-top__item--active')}
             to={url}
+            key={key}
           >
             {name}
             {sub &&
-              <img
-                src={Arrow}
-                onClick={this.toggleSubMenu.bind(null, ind)}
-              />
+              <img src={arrowImg} onClick={this.toggleSubMenu} />
             }
           </NavLink>
         )}
+
         <span className={cx('navigation-top__right')}>
-          <img src={DAL}/>
-          <img src={Notification}/>
+          <img src={dalImg}/>
+          <img src={notificationImg}/>
           <div className={cx('user-profile')}>
-            <img src={Userpic}/>
+            <img src={userpicImg}/>
             <span>$2, 866</span>
-            <img className={cx('user-profile__open')} src={Arrow} onClick={this.toggleProfile}/>
+            <img className={cx('user-profile__open')} src={arrowImg} onClick={this.toggleProfile}/>
             {this.state.profileOpen && "..."}
           </div>
         </span>

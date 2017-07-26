@@ -5,11 +5,11 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { withRouter, Route, Switch, Redirect } from 'react-router-dom';
 
-import { PlayerSidebarLeft } from '~/components/player';
+import { PlayerSidebarLeft, PlayerSidebarRight } from 'components/player';
 
-import SidebarLeftBox from '~/components/SidebarLeftBox';
-import SidebarRightBox from '~/components/SidebarRightBox';
-import ContentBox from '~/components/ContentBox';
+import SidebarLeftBox from 'components/SidebarLeftBox';
+import SidebarRightBox from 'components/SidebarRightBox';
+import ContentBox from 'components/ContentBox';
 
 import PlayerStream from './PlayerStream';
 
@@ -37,7 +37,9 @@ export default class PlayerContainer extends Component {
           </Switch>
         </ContentBox>
 
-        <SidebarRightBox/>
+        <SidebarRightBox>
+          <PlayerSidebarRight/>
+        </SidebarRightBox>
 
       </div>
     );

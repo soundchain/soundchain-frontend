@@ -34,6 +34,15 @@ export default function GuideBox(props) {
               Upload your release''s demo to the decentralized net and get an invitation for DAL creation from the community
             </div>
           </div>
+          <div className={cx('step')}>
+            <div className={cx('step__checkbox')}/>
+            <div className={cx('step__text')}>
+              <div className={cx('step__text--header')}>
+                ISSUE CRYPTOSHARES
+              </div>
+              Create your own track tokens, license these using a special smart-contract constructor and distribute the tokens among your band's members
+            </div>
+          </div>
         </div>
       </div>
       <div className={cx('guide-box__section')}>

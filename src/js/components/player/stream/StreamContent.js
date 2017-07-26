@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import Scrollbars from 'react-custom-scrollbars';
 
 import {
   WidgetStreamTrack,
@@ -20,29 +19,26 @@ const EXAMPLE_STREAM = [
 export default class StreamContent extends Component {
 
   static propTypes = {
-  }
+  };
 
   static defaultProps = {
-  }
-
+  };
 
   render() {
     return (
       <div className={cx('stream-content')}>
-        <Scrollbars>
-          {EXAMPLE_STREAM.map((item, key) => {
-            if (item.type === 'track') {
-              return <WidgetStreamTrack key={key}/>;
-            } else if (item.type === 'playlist') {
-              return <WidgetStreamPlaylist key={key}/>;
-            } else if (item.type === 'album') {
-              return <WidgetStreamAlbum key={key}/>;
-            }
+        {EXAMPLE_STREAM.map((item, key) => {
+          if (item.type === 'track') {
+            return <WidgetStreamTrack key={key}/>;
+          } else if (item.type === 'playlist') {
+            return <WidgetStreamPlaylist key={key}/>;
+          } else if (item.type === 'album') {
+            return <WidgetStreamAlbum key={key}/>;
+          }
 
-            console.error('Stream item has unavailable type: ', item);
-            return null;
-          })}
-        </Scrollbars>
+          console.error('Stream item has unavailable type: ', item);
+          return null;
+        })}
       </div>
     );
   }

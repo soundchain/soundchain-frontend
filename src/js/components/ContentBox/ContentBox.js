@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import Scrollbars from 'react-custom-scrollbars';
 
 import cx from './ContentBox.scss';
 
@@ -19,7 +20,9 @@ export default class ContentBox extends Component {
 
       return (
         <main className={cx('content-box', className)}>
-          {children}
+          <Scrollbars>
+            {children}
+          </Scrollbars>
         </main>
       );
   }

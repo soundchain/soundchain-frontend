@@ -1,15 +1,37 @@
 <!doctype html>
-<html lang="en">
+<html>
   <head>
     <meta name="theme-color" content="#111111">
-    <meta name="viewport" content="width=device-width, initial-scale=0.75, maximum-scale=1.0, user-scalable=0" />
     <meta name="mobile-web-app-capable" content="yes">
     <link rel="icon" href="favicon.ico" />
-    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500" rel="stylesheet">
     <meta charset="utf-8" />
-    <title>Spectrum</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Sounchain</title>
+
+    <base href="/">
+
+    <!-- Use minimum-scale=1 to enable GPU rasterization -->
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, user-scalable=0, maximum-scale=1, minimum-scale=1"
+    >
   </head>
   <body>
-  	<div id="root"><noscript>Spectrum requires Javascript to be enabled.</noscript></div>
+    <div id="root"><noscript>Soundchain requires Javascript to be enabled.</noscript></div>
+
+    <!-- This script adds the Google fonts to our project. -->
+    <script>
+      var WebFontConfig = {
+        google: { families: [ 'Roboto:400,500' ] }
+      };
+      (function() {
+        var wf = document.createElement('script');
+        wf.src = 'https://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+        wf.type = 'text/javascript';
+        wf.async = 'true';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(wf, s);
+      })();
+    </script>
   </body>
 </html>

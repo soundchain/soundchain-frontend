@@ -2,11 +2,10 @@
   flex: 1 1 auto !important;
 
   display: flex;
-  overflow-y: scroll;
 
   > * {
     //flex: 0 0 auto;
-  }  
+  }
 
   /*
   > .left {

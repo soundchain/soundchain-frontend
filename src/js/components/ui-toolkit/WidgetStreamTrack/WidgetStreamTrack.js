@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-import { WidgetStreamItem, Timeline } from 'soundchain-ui-toolkit';
+import { StreamItem, Timeline } from 'soundchain-ui-toolkit';
 
 import BuyLicenses from './BuyLicenses.png';
 import ICOStarted from './ICOStarted.png';
@@ -26,7 +26,7 @@ export default class WidgetStreamTrack extends Component {
 
   render() {
     return (
-      <WidgetStreamItem
+      <StreamItem
         info={{
           url: '/',
           ownerName: 'asdf',
@@ -50,6 +50,8 @@ export default class WidgetStreamTrack extends Component {
           </div>
         }
         coverImage={Cover}
+        coverImageWidth={'180px'}
+        coverImageHeight={'170px'}
         coverOverlay={
           <div>Overlay!</div>
         }
@@ -115,7 +117,7 @@ export default class WidgetStreamTrack extends Component {
             totalTime={4 * 60 + 12}
           />
         </div>
-      </WidgetStreamItem>
+      </StreamItem>
     );
   }
 }

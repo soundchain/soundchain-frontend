@@ -17,7 +17,7 @@ function handlePlayerCanvas(trackInfo, played, totalTime, container) {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     const
       width = Math.floor(container.getBoundingClientRect().width),
-      height = 100;
+      height = 80;
 
     canvas.width = width;
     canvas.height = height;

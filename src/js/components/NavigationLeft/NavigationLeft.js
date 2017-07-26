@@ -15,11 +15,11 @@ export default class NavigationLeft extends Component {
   render() {
     const links = [
       {name: "Player", img: PlayerImage, url: "/player/stream"},
-      {name: "Wallet", img: WalletImage, url: "/player/stream"},
-      {name: "DAL", img: DALImage, url: "/player/stream"},
-      {name: "ICO", img: ICOImage, url: "/player/stream"},
-      {name: "Trading", img: TraingImage, url: "/player/stream"},
-      {name: "Market", img: MarketImage, url: "/player/stream"},
+      {name: "Wallet", img: WalletImage, url: "/wallet"},
+      {name: "DAL", img: DALImage, url: "/DAL"},
+      {name: "ICO", img: ICOImage, url: "/ICO"},
+      {name: "Trading", img: TraingImage, url: "/trade"},
+      {name: "Market", img: MarketImage, url: "/market"},
     ];
 
     return (

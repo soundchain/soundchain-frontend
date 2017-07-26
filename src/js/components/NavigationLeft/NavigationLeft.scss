@@ -17,8 +17,8 @@
       align-items: center;
       text-decoration: none;
 
-      &:visited {
-        color: inherit;
+      &, &:visited {
+        color: $color-text-nav;
       }
       &:hover {
         color: $color-text-nav-selected;

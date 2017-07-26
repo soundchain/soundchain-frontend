@@ -20,12 +20,12 @@ export default class WidgetStreamItem extends Component {
           {this.props.header}
         </div>
         <div className={cx('stream-item__content')}>
-          <div className={cx('content__cover')}>
+          <div className={cx('content__cover')} style={{height: this.props.coverImageHeight}}>
             <img
               className={cx('cover__image')}
               src={this.props.coverImage}
-              height="100%"
-              width="220px"
+              width={this.props.coverImageWidth}
+              height={this.props.coverImageHeight}
             />
             <div className={cx('cover__overlay')}>
               {this.props.coverOverlay}

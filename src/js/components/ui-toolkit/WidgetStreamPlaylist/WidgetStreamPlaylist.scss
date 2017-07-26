@@ -1,111 +1,97 @@
 @import '~css/constants.scss';
 
 :local {
-  .stream-track {
-    &__header {
-      display: flex;
-      margin-left: auto;
-      align-items: center;
-    }
-    &__footer {
-      display: flex;
-      color: #86939e;
-      margin-top: 5px;
-    }
-  }
-
-  .song-info {
-    font-size: 1.6rem;
-    &__author {
-      font-weight: 500;
-      color: #5e6977;
-    }
-    &__track {
-      color: #86939e;
-    }
-    &__category {
-      color: #358ed7;
-    }
-  }
-
   .item-content {
-    display: flex;
-    align-items: flex-start;
-    margin: 20px 10px;
     height: 240px;
-    &__overlay {
+    display: flex;
+    flex-direction: column;
+
+    &__player {
+      min-height: 40px;
+    }
+    &__playlist {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+  }
+  .playlist {
+    &__shadow-top {
+      z-index: 100;
       position: absolute;
       top: 0;
-      left: 0;
+      height: 80px;
       width: 100%;
-      height: 100%;
+      background-image: linear-gradient(0deg, transparent 0%, white 100%);
+    }
+    &__shadow-bottom {
+      z-index: 100;
+      position: absolute;
+      bottom: 0;
+      height: 80px;
+      width: 100%;
+      background-image: linear-gradient(180deg, transparent 0%, white 100%);
+    }
+    &__song {
+      display: flex;
+      min-height: 25px;
+      align-items: center;
+      font-size: 0.85em;
     }
   }
-
-  .song-actions {
-    margin-left: auto;
-    display: flex;
-    align-items: center;
-  }
-  .share-button {
-    margin: 0 10px;
-    display: flex;
-    align-items: center;
-    color: #bdc6cf;
-    font-size: 1.4rem;
-    font-weight: 500;
-    &__image {
+  .song {
+    &__index {
       margin: 0 10px;
-    }
-  }
-  .song-type {
-    margin: 0 10px;
-    background-color: #A6E50F;
-    padding: 5px 20px;
-    border-radius: 20px;
-    color: white;
-    font-size: 1.2rem;
-  }
-
-  .buy-license {
-    border: 2px solid #E1E8EE;
-    border-radius: 5px;
-    padding: 8px 5px;
-    margin: 5px;
-    color: #358ed7;
-
-    &__price {
+      min-width: 30px;
       text-align: center;
-      padding: 8px;
-      border-right: 1px solid #E1E8EE;
     }
-    &__text {
-      padding: 8px;
-    }
-  }
-  .ICO-status {
-    padding: 5px 15px;
-    margin: 5px;
-    border-radius: 99px;
-    background-color: #BDC6CF;
-    color: white;
-    font-weight: 500;
-  }
-  .footer {
-    &__right {
-      margin-left: auto;
-    }
-    &__item {
-      display: inline-flex;
-      margin: 5px;
-      align-items: baseline;
-      &__image {
-        padding: 0 5px;
-      }
-    }
-    &__repost {
+    &__name {
       font-weight: 500;
-      color: #bdc6cf;
+    }
+    &__author {
+
+    }
+    &__info {
+      display: flex;
+      align-items: center;
+      flex: 1;
+      overflow-x: hidden;
+    }
+    &__time {
+      margin: 10px;
+      padding-left: auto;
+    }
+  }
+
+  .overlay-content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+
+    &__info {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+      padding: 0 20px;
+    }
+    &__actions {
+      min-height: 30px;
+      padding: 0 20px;
+    }
+  }
+  .info {
+    &__name {
+      font-size: 1.2em;
+      color: #43484d;
+      margin-top: 15px;
+    }
+    &__subtitle {
+      color: #86939e;
+      margin-top: 10px;
+      font-size: 0.8em;
     }
   }
 }
